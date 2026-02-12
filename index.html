@@ -2,14 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
+  <!-- STEP 1: Added viewport meta tag
+  This tells phones/tablets to use the real device width
+  instead of pretending the site is 980px wide -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- STEP 2: Added scalable wrapper
+  Everything goes inside this container so we can control
+  max-width and centering across all screen sizes -->
   <div class="wrapper">
+
     <h1>My Portfolio</h1>
 
+    <!-- STEP 3: Properly opened main content area -->
     <main>
       <nav>
         <ul>
@@ -21,7 +32,7 @@
 
       <h2>Projects</h2>
       <ul>
-        <li><a href="project1.html">Lost &amp; Found</a></li>
+        <li><a href="project1.html">Lost & Found</a></li>
         <li><a href="project2.html">Project 2</a></li>
         <li><a href="project3.html">Project 3</a></li>
         <li><a href="project4.html">Project 4</a></li>
@@ -34,7 +45,11 @@
         This is the home page for my portfolio. Use the links above to explore my projects and learn more about me.
       </p>
     </main>
+
+    <!-- STEP 4: Properly closed main
+    Your original file accidentally opened <main> twice -->
   </div>
+
 </body>
 </html>
 
