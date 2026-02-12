@@ -5,7 +5,7 @@
 
   <!-- STEP 1: Added viewport meta tag
   This tells phones/tablets to use the real device width
-  instead of pretending the site is 980px wide -->
+  instead of pretending the site is 980px wide, which is what sites do by default and causes mobile websites to look super tiny-->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>My Portfolio</title>
@@ -13,14 +13,13 @@
 </head>
 <body>
 
-  <!-- STEP 2: Added scalable wrapper
+  <!-- STEP 2: Added scalable wrapper - you can also create fixed wrappers like 100px wide for example
   Everything goes inside this container so we can control
   max-width and centering across all screen sizes -->
   <div class="wrapper">
 
     <h1>My Portfolio</h1>
 
-    <!-- STEP 3: Properly opened main content area -->
     <main>
       <nav>
         <ul>
@@ -46,8 +45,6 @@
       </p>
     </main>
 
-    <!-- STEP 4: Properly closed main
-    Your original file accidentally opened <main> twice -->
   </div>
 
 </body>
