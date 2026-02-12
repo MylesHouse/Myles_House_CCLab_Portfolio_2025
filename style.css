@@ -1,20 +1,27 @@
 /* Global styles */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 40px;
-  font-family: "Courier New", "Lucida Console", monospace; /* typewriter vibe */
+  padding: clamp(20px, 5vw, 40px); /* responsive padding */
+  font-family: "Courier New", "Lucida Console", monospace;
   background-color: #e6e6ff; /* light purple */
   color: #111;
 }
 
+/* ===== Scalable page wrapper ===== */
+.wrapper {
+  width: min(100% - 2rem, 1000px); /* fluid width with max */
+  margin-inline: auto;
+}
+
 /* Page layout */
 main {
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 /* Navigation */
@@ -23,6 +30,7 @@ nav ul {
   padding: 0;
   margin: 0 0 20px 0;
   display: flex;
+  flex-wrap: wrap; /* allows wrapping on mobile */
   gap: 16px;
 }
 
@@ -34,18 +42,18 @@ nav a {
 }
 
 nav a:hover {
-  border-bottom-color: #a98fd3; /* purple accent */
+  border-bottom-color: #a98fd3;
 }
 
 /* Headings */
 h1 {
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem); /* responsive type */
   margin-bottom: 10px;
   color: #111;
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
   margin-top: 30px;
   margin-bottom: 8px;
   color: #333;
@@ -54,19 +62,24 @@ h2 {
 /* Paragraphs */
 p {
   line-height: 1.5;
+  max-width: 65ch; /* nicer reading width */
 }
 
-/* Project iframe */
+/* Responsive iframe */
 iframe {
-  width: 100%;           /* fills the content width */
-  max-width: 800px;      /* don’t get too huge on big screens */
-  height: 500px;         /* taller so more of the sketch shows */
+  width: 100%;
+  height: clamp(300px, 60vw, 500px); /* scales with screen */
   border: 2px solid #333;
   border-radius: 4px;
+  display: block;
 }
 
-/* Optional: keep content off the very edges on mobile */
+/* Mobile tweaks */
 @media (max-width: 600px) {
+  nav ul {
+    gap: 12px;
+  }
+
   body {
     padding: 20px;
   }
