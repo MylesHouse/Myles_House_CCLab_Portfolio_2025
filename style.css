@@ -1,36 +1,73 @@
-/* Global styles */
+/* ===============================
+   GLOBAL RESET
+   =============================== */
+
+/* STEP 1: Apply box-sizing to EVERYTHING
+   Including pseudo-elements (::before, ::after)
+   This makes widths predictable across devices */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* ===============================
+   BODY STYLING
+   =============================== */
+
 body {
   margin: 0;
-  padding: clamp(20px, 5vw, 40px); /* responsive padding */
+
+  /* STEP 2: Responsive padding instead of fixed 40px
+     clamp(min, preferred, max)
+     → shrinks on mobile
+     → grows on large screens
+     → never too small or too big */
+  padding: clamp(20px, 5vw, 40px);
+
   font-family: "Courier New", "Lucida Console", monospace;
-  background-color: #e6e6ff; /* light purple */
+  background-color: #e6e6ff;
   color: #111;
 }
 
-/* ===== Scalable page wrapper ===== */
+/* ===============================
+   MAIN SCALABLE WRAPPER
+   =============================== */
+
+/* STEP 3: New wrapper container
+   Controls overall page width + centering */
 .wrapper {
-  width: min(100% - 2rem, 1000px); /* fluid width with max */
+  /* Takes full width minus margins on small screens
+     BUT never exceeds 1000px on large screens */
+  width: min(100% - 2rem, 1000px);
+
+  /* Centers the wrapper horizontally */
   margin-inline: auto;
 }
 
-/* Page layout */
+/* ===============================
+   PAGE LAYOUT
+   =============================== */
+
 main {
   width: 100%;
 }
 
-/* Navigation */
+/* ===============================
+   NAVIGATION
+   =============================== */
+
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0 0 20px 0;
+
   display: flex;
-  flex-wrap: wrap; /* allows wrapping on mobile */
+
+  /* STEP 4: Allow wrapping on small screens
+     Prevents nav from overflowing off-screen */
+  flex-wrap: wrap;
+
   gap: 16px;
 }
 
@@ -45,9 +82,14 @@ nav a:hover {
   border-bottom-color: #a98fd3;
 }
 
-/* Headings */
+/* ===============================
+   RESPONSIVE TYPOGRAPHY
+   =============================== */
+
 h1 {
-  font-size: clamp(1.8rem, 4vw, 2.4rem); /* responsive type */
+  /* STEP 5: Responsive heading size
+     Scales with screen width but stays reasonable */
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   margin-bottom: 10px;
   color: #111;
 }
@@ -59,27 +101,46 @@ h2 {
   color: #333;
 }
 
-/* Paragraphs */
+/* ===============================
+   TEXT READABILITY
+   =============================== */
+
 p {
   line-height: 1.5;
-  max-width: 65ch; /* nicer reading width */
+
+  /* STEP 6: Limit paragraph width for readability
+     Long lines are hard to read on big screens */
+  max-width: 65ch;
 }
 
-/* Responsive iframe */
+/* ===============================
+   RESPONSIVE IFRAME
+   =============================== */
+
 iframe {
   width: 100%;
-  height: clamp(300px, 60vw, 500px); /* scales with screen */
+
+  /* STEP 7: Responsive height
+     Shrinks on mobile, max 500px on desktop */
+  height: clamp(300px, 60vw, 500px);
+
   border: 2px solid #333;
   border-radius: 4px;
   display: block;
 }
 
-/* Mobile tweaks */
+/* ===============================
+   MOBILE ADJUSTMENTS
+   =============================== */
+
 @media (max-width: 600px) {
+
+  /* Slightly tighter spacing on mobile */
   nav ul {
     gap: 12px;
   }
 
+  /* Keeps content off edges on small screens */
   body {
     padding: 20px;
   }
