@@ -1,19 +1,11 @@
-/* ===============================
-   GLOBAL RESET
-   =============================== */
-
-/* STEP 1: Apply box-sizing to EVERYTHING
-   Including pseudo-elements (::before, ::after)
+/* STEP 1: Apply box-sizing to EVERYTHING - which controls how width and height are calculated for elements on a webpage.
+   Including pseudo-elements (::before, ::after) - Pseudo-elements are a CSS way to style parts of an element that don’t actually exist as real HTML.
    This makes widths predictable across devices */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
-/* ===============================
-   BODY STYLING
-   =============================== */
 
 body {
   margin: 0;
@@ -30,10 +22,6 @@ body {
   color: #111;
 }
 
-/* ===============================
-   MAIN SCALABLE WRAPPER
-   =============================== */
-
 /* STEP 3: New wrapper container
    Controls overall page width + centering */
 .wrapper {
@@ -45,17 +33,9 @@ body {
   margin-inline: auto;
 }
 
-/* ===============================
-   PAGE LAYOUT
-   =============================== */
-
 main {
   width: 100%;
 }
-
-/* ===============================
-   NAVIGATION
-   =============================== */
 
 nav ul {
   list-style: none;
@@ -82,10 +62,6 @@ nav a:hover {
   border-bottom-color: #a98fd3;
 }
 
-/* ===============================
-   RESPONSIVE TYPOGRAPHY
-   =============================== */
-
 h1 {
   /* STEP 5: Responsive heading size
      Scales with screen width but stays reasonable */
@@ -101,10 +77,6 @@ h2 {
   color: #333;
 }
 
-/* ===============================
-   TEXT READABILITY
-   =============================== */
-
 p {
   line-height: 1.5;
 
@@ -112,10 +84,6 @@ p {
      Long lines are hard to read on big screens */
   max-width: 65ch;
 }
-
-/* ===============================
-   RESPONSIVE IFRAME
-   =============================== */
 
 iframe {
   width: 100%;
@@ -128,10 +96,6 @@ iframe {
   border-radius: 4px;
   display: block;
 }
-
-/* ===============================
-   MOBILE ADJUSTMENTS
-   =============================== */
 
 @media (max-width: 600px) {
 
