@@ -109,3 +109,23 @@ iframe {
     padding: 20px;
   }
 }
+
+/* Default: show desktop text, hide mobile text */
+.mobile-text {
+  display: none;
+}
+
+.desktop-text {
+  display: block;
+}
+
+/* When screen is mobile size */
+@media (max-width: 768px) {
+  .mobile-text {
+    display: block;
+  }
+
+  .desktop-text {
+    display: none;
+  }
+}
