@@ -1,4 +1,3 @@
-
 const quizForm = document.getElementById("lunchQuiz");
 const hungerSlider = document.getElementById("hunger");
 const hungerValue = document.getElementById("hungerValue");
