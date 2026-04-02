@@ -1,4 +1,3 @@
-
 const quizForm = document.getElementById("lunchQuiz");
 const hungerSlider = document.getElementById("hunger");
 const hungerValue = document.getElementById("hungerValue");
@@ -9,10 +8,12 @@ const resultImage = document.getElementById("resultImage");
 const resultText = document.getElementById("resultText");
 const restartBtn = document.getElementById("restartBtn");
 
+// Update the visible hunger number when the slider moves
 hungerSlider.addEventListener("input", () => {
   hungerValue.textContent = hungerSlider.value;
 });
 
+// Handle quiz submission
 quizForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -31,6 +32,7 @@ quizForm.addEventListener("submit", (event) => {
   resultSection.scrollIntoView({ behavior: "smooth" });
 });
 
+// Reset the quiz
 restartBtn.addEventListener("click", () => {
   quizForm.reset();
   hungerSlider.value = 5;
@@ -39,7 +41,9 @@ restartBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// Quiz logic
 function getLunchResult(hunger, fit, vibe) {
+  // Automatic horse if slider is all the way right
   if (hunger === 10) {
     return {
       name: "A Horse",
@@ -52,9 +56,10 @@ function getLunchResult(hunger, fit, vibe) {
   let pokeScore = 0;
   let candyScore = 0;
 
+  // Hunger scoring
   if (hunger <= 3) {
     latteScore += 3;
-    candyScore += 2;
+    candyScore += 1;
   } else if (hunger <= 7) {
     pokeScore += 3;
     latteScore += 1;
@@ -63,6 +68,7 @@ function getLunchResult(hunger, fit, vibe) {
     candyScore += 2;
   }
 
+  // Outfit scoring
   if (fit === "pajamas") {
     latteScore += 3;
   } else if (fit === "athleisure") {
@@ -74,6 +80,7 @@ function getLunchResult(hunger, fit, vibe) {
     candyScore += 3;
   }
 
+  // Image vibe scoring
   if (vibe === "img1") {
     latteScore += 2;
   } else if (vibe === "img2") {
@@ -82,14 +89,15 @@ function getLunchResult(hunger, fit, vibe) {
     candyScore += 2;
   } else if (vibe === "img4") {
     pokeScore += 1;
-    candyScore += 1;
+    candyScore += 2;
   }
 
+  // Final result
   if (latteScore >= pokeScore && latteScore >= candyScore) {
     return {
       name: "A Latte",
       image: "LunchOptions/latte.jpg",
-      description: "Your energy says lunch is optional, but caffeine is not."
+      description: "Your energy says lunch is optional, but caffeine is absolutely necessary."
     };
   }
 
