@@ -1,27 +1,3 @@
-<link rel="stylesheet" href="quizStyle.css" />
-
-<script src="quizScript.js"></script>
-
-<label class="image-card">
-  <input type="radio" name="vibe" value="img1" required />
-  <img src="LunchOptions/Img_1.jpg" alt="Vibe option 1" />
-</label>
-
-<label class="image-card">
-  <input type="radio" name="vibe" value="img2" />
-  <img src="LunchOptions/Img_2.jpg" alt="Vibe option 2" />
-</label>
-
-<label class="image-card">
-  <input type="radio" name="vibe" value="img3" />
-  <img src="LunchOptions/Img_3.jpg" alt="Vibe option 3" />
-</label>
-
-<label class="image-card">
-  <input type="radio" name="vibe" value="img4" />
-  <img src="LunchOptions/Img_4.jpg" alt="Vibe option 4" />
-</label>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +12,8 @@
     <p class="intro">A highly scientific lunch quiz.</p>
 
     <form id="lunchQuiz">
+      
+      <!-- Question 1 -->
       <section class="question-block">
         <h2>1. How hungry are you?</h2>
         <label for="hunger">Drag the slider:</label>
@@ -54,18 +32,36 @@
         </div>
       </section>
 
+      <!-- Question 2 -->
       <section class="question-block">
         <h2>2. What’s the fit?</h2>
         <div class="options">
-          <label><input type="radio" name="fit" value="pajamas" required /> Pajamas</label>
-          <label><input type="radio" name="fit" value="athleisure" /> Athleisure</label>
-          <label><input type="radio" name="fit" value="dolledup" /> I’m all dolled up</label>
-          <label><input type="radio" name="fit" value="embarrassed" /> I’m embarrassed by my outfit choice tbh</label>
+          <label>
+            <input type="radio" name="fit" value="pajamas" required />
+            Pajamas
+          </label>
+
+          <label>
+            <input type="radio" name="fit" value="athleisure" />
+            Athleisure
+          </label>
+
+          <label>
+            <input type="radio" name="fit" value="dolledup" />
+            I’m all dolled up
+          </label>
+
+          <label>
+            <input type="radio" name="fit" value="embarrassed" />
+            I’m embarrassed by my outfit choice tbh
+          </label>
         </div>
       </section>
 
+      <!-- Question 3 -->
       <section class="question-block">
         <h2>3. Pick an image that describes the vibe of the quality of your hunger right now.</h2>
+
         <div class="image-options">
           <label class="image-card">
             <input type="radio" name="vibe" value="img1" required />
